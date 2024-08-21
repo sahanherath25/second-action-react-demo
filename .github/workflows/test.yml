@@ -2,7 +2,7 @@ name: sahan
 on:
   push:
     branches:
-      - dev
+      - sahan
 jobs:
   deploy:
     runs-on: ubuntu-latest
