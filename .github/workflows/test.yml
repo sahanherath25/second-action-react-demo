@@ -1,0 +1,27 @@
+name: sahan
+on:
+  push:
+    branches:
+      - dev
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Get the code
+        uses: actions/checkout@v4
+      - name: Install Dependencies
+        run: npm ci
+      - name: LInt the code
+        run: npm run lint
+      - name: Test code
+        run: npm run test
+      - name: Build code
+        run: npm run build
+      - name: Deploy
+        run: echo "Deploy The Code to Server ....."
+      - name: Print Details
+          run: echo "{{toJSON(github.events)}}"
