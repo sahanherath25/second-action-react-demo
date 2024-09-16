@@ -30,5 +30,3 @@ jobs:
       - name: Deploy
         run: echo "Deploy The Code to Server ....."
       - name: Print Details
-        run: echo "{{toJSON(github.events)}}"
-
