@@ -10,16 +10,29 @@ on:
       - 'dev**'
       - sahan
       - 'action/**/'
-
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: GEt the Code
+        uses: actions/checkout@v4
+      - name: Install Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Installing Dependencies
+        run: npm ci
+      - name : Testing Code
+        run : echo "Testing Started... "
   deploy:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Install node
         uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Get the code
+      - name: Get the codes
         uses: actions/checkout@v4
       - name: Install Dependencies
         run: npm ci
