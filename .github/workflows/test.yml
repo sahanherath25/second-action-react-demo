@@ -8,7 +8,7 @@ on:
       - main
       - 'devs-**'
       - 'dev**'
-      - dev
+      - sahan
       - 'action/**/'
 
 jobs:
