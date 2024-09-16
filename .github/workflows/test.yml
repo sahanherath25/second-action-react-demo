@@ -5,10 +5,10 @@ on:
       - opened
       - edited
     branches:
-      - main
+      - master
       - 'devs-**'
       - 'dev**'
-      - dev
+      - sahan
       - 'action/**/'
 
 jobs:
@@ -30,3 +30,4 @@ jobs:
       - name: Deploy
         run: echo "Deploy The Code to Server ....."
       - name: Print Details
+        run : echo "Printing ....."
