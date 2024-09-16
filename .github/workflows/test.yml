@@ -1,8 +1,14 @@
 name: sahan
 on:
-  push:
+  pull-request:
+    types:
+      - opened
+      - edited
     branches:
-      - sahan
+      - main
+      - 'devs-**'
+      - 'action/**/'
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -23,3 +29,4 @@ jobs:
         run: echo "Deploy The Code to Server ....."
       - name: Print Details
         run: echo "{{toJSON(github.events)}}"
+
